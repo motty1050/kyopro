@@ -1,0 +1,145 @@
+{
+    "AtCoder Template": {
+        "prefix": "atcoder",
+        "body": [
+            "#!/usr/bin/env python3",
+            "# -*- coding: utf-8 -*-",
+            "",
+            "import sys",
+            "import math",
+            "import bisect",
+            "import itertools",
+            "import collections",
+            "import heapq",
+            "from collections import defaultdict, deque, Counter",
+            "from itertools import permutations, combinations, product",
+            "from functools import lru_cache",
+            "",
+            "# 高速入力",
+            "def input():",
+            "    return sys.stdin.readline().strip()",
+            "",
+            "def main():",
+            "    # 入力処理",
+            "    ${1:N = int(input())}",
+            "    ${2:A = list(map(int, input().split()))}",
+            "    ",
+            "    # メイン処理",
+            "    ${3:ans = 0}",
+            "    ",
+            "    # 出力",
+            "    print(${4:ans})",
+            "",
+            "if __name__ == \"__main__\":",
+            "    main()"
+        ],
+        "description": "AtCoder problem template"
+    },
+    "Fast Input": {
+        "prefix": "fastinput",
+        "body": [
+            "def input():",
+            "    return sys.stdin.readline().strip()"
+        ],
+        "description": "Fast input function"
+    },
+    "Read Integers": {
+        "prefix": "readints",
+        "body": [
+            "${1:N} = int(input())",
+            "${2:A} = list(map(int, input().split()))"
+        ],
+        "description": "Read integers from input"
+    },
+    "Read Multiple Integers": {
+        "prefix": "readmulti",
+        "body": [
+            "${1:N}, ${2:M} = map(int, input().split())"
+        ],
+        "description": "Read multiple integers from one line"
+    },
+    "For Loop with Range": {
+        "prefix": "fori",
+        "body": [
+            "for ${1:i} in range(${2:N}):",
+            "    ${3:pass}"
+        ],
+        "description": "For loop with range"
+    },
+    "Union Find": {
+        "prefix": "unionfind",
+        "body": [
+            "class UnionFind:",
+            "    def __init__(self, n):",
+            "        self.parent = list(range(n))",
+            "        self.rank = [0] * n",
+            "        self.size = [1] * n",
+            "    ",
+            "    def find(self, x):",
+            "        if self.parent[x] != x:",
+            "            self.parent[x] = self.find(self.parent[x])",
+            "        return self.parent[x]",
+            "    ",
+            "    def union(self, x, y):",
+            "        root_x = self.find(x)",
+            "        root_y = self.find(y)",
+            "        ",
+            "        if root_x != root_y:",
+            "            if self.rank[root_x] < self.rank[root_y]:",
+            "                root_x, root_y = root_y, root_x",
+            "            ",
+            "            self.parent[root_y] = root_x",
+            "            self.size[root_x] += self.size[root_y]",
+            "            ",
+            "            if self.rank[root_x] == self.rank[root_y]:",
+            "                self.rank[root_x] += 1",
+            "    ",
+            "    def same(self, x, y):",
+            "        return self.find(x) == self.find(y)",
+            "    ",
+            "    def get_size(self, x):",
+            "        return self.size[self.find(x)]"
+        ],
+        "description": "Union-Find data structure"
+    },
+    "Binary Search": {
+        "prefix": "binsearch",
+        "body": [
+            "def binary_search(arr, target):",
+            "    left, right = 0, len(arr) - 1",
+            "    ",
+            "    while left <= right:",
+            "        mid = (left + right) // 2",
+            "        if arr[mid] == target:",
+            "            return mid",
+            "        elif arr[mid] < target:",
+            "            left = mid + 1",
+            "        else:",
+            "            right = mid - 1",
+            "    ",
+            "    return -1"
+        ],
+        "description": "Binary search implementation"
+    },
+    "Dijkstra": {
+        "prefix": "dijkstra",
+        "body": [
+            "def dijkstra(graph, start):",
+            "    n = len(graph)",
+            "    dist = [float('inf')] * n",
+            "    dist[start] = 0",
+            "    pq = [(0, start)]",
+            "    ",
+            "    while pq:",
+            "        d, v = heapq.heappop(pq)",
+            "        if d > dist[v]:",
+            "            continue",
+            "        ",
+            "        for to, cost in graph[v]:",
+            "            if dist[v] + cost < dist[to]:",
+            "                dist[to] = dist[v] + cost",
+            "                heapq.heappush(pq, (dist[to], to))"
+        ],
+        "description": "Dijkstra's algorithm"
+    }
+}

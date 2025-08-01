@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+.env
+.venv/
+venv/
+
+# IDEs
+.vscode/settings.json
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.log
+
+# Test outputs
+test_output/
+output/
+
+# AtCoder specific
+*/a.out
+*/input.txt
+*/output.txt
+*/.acc/
+
+# Personal notes (optional)
+notes/
+drafts/
