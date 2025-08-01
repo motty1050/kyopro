@@ -1,0 +1,16 @@
+[codestyle]
+indent_type='space'
+indent_width=4
+workspace_dir='/root/kyopro/Atcoder/'
+lang='python'
+template_file='/root/kyopro/Atcoder/template.py'
+
+[postprocess]
+exec_on_each_problem_dir=''
+exec_on_contest_dir=''
+
+[etc]
+download_without_login=false
+parallel_download=false
+save_no_session_cache=false
+skip_existing_problems=false

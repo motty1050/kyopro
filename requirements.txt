@@ -1,0 +1,23 @@
+# AtCoder競技プログラミング用パッケージ
+
+# 数値計算・科学計算
+numpy>=2.0
+scipy>=1.10
+sympy>=1.14
+
+# グラフ理論
+networkx>=3.0
+
+# 競技プログラミング専用ツール
+online-judge-tools>=11.0
+atcoder-tools>=2.0
+
+# ユーティリティ
+requests>=2.30
+beautifulsoup4>=4.12
+
+# 可視化（デバッグ用）
+matplotlib>=3.8
+
+# 高速化
+numba>=0.60
