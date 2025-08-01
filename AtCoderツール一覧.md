@@ -123,18 +123,39 @@ for i, (inp, out) in enumerate(samples):
 3. **VS Code拡張**: 開発環境
 4. **カスタムテンプレート**: 個人用テンプレート
 
+### エイリアス設定（kyoproワークスペース）
+当環境では便利なエイリアスが設定済みです：
+```bash
+# エイリアス一覧
+atgen abc123    # 問題ダウンロード（atcoder-tools gen）
+attest          # テスト実行（atcoder-tools test）
+atsub           # 提出（atcoder-tools submit）
+oj              # online-judge-tools
+kyopro          # Atcoderディレクトリに移動
+```
+
 ### 効率的なワークフロー
 ```bash
 # 1. 問題ダウンロード
-acc new abc123
+atgen abc123
 
 # 2. 問題を解く（VS Codeで編集）
+kyopro
+cd abc123/A
+code main.py
 
 # 3. テスト実行
-acc test
+attest
 
 # 4. 提出
-acc submit
+atsub
+```
+
+### フルパス版（参考）
+エイリアスが効かない場合のフルパスコマンド：
+```bash
+/root/kyopro/.venv/bin/atcoder-tools gen abc123 --config /root/kyopro/atcodertools.toml --without-login
+/root/kyopro/.venv/bin/oj login https://atcoder.jp/
 ```
 
 ## トラブルシューティング
@@ -143,11 +164,22 @@ acc submit
 1. **ログインエラー**: ブラウザでログイン後、Cookieを確認
 2. **サンプル取得失敗**: 問題URLが正しいか確認
 3. **テスト失敗**: 出力フォーマット（改行、スペース）を確認
+4. **コマンドが見つからない**: フルパスまたはエイリアスを使用
+
+### 現在の環境状況
+**kyoproワークスペース**では以下が設定済み：
+- ✅ atcoder-tools 2.14.0（依存関係修正済み）
+- ✅ online-judge-tools 11.5.1
+- ✅ 仮想環境（/root/kyopro/.venv/）
+- ✅ カスタム設定ファイル（atcodertools.toml）
+- ✅ 便利なエイリアス設定
+- ✅ Pythonテンプレート対応
 
 ### 環境設定のポイント
 - Python環境の統一
-- 依存関係の管理
+- 依存関係の管理（Jinja2/MarkupSafe問題解決済み）
 - テンプレートの標準化
+- エイリアスによる効率化
 
 ---
 
