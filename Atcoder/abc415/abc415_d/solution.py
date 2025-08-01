@@ -12,19 +12,19 @@ from itertools import permutations, combinations, product
 from functools import lru_cache
 
 # 高速入力
-# def input():
-#     return sys.stdin.readline().strip()
+def input():
+    return sys.stdin.readline().strip()
 
 def main():
     # 入力処理
-    s = input()
+    N = int(input())
+    A = list(map(int, input().split()))
     
-    # '#'の位置を収集
-    positions = [i + 1 for i, c in enumerate(s) if c == '#']
+    # メイン処理
+    ans = 0
     
-    # 2つずつペアにして出力
-    for i in range(0, len(positions), 2):
-        print(f"{positions[i]},{positions[i+1]}")
-    
+    # 出力
+    print(ans)
+
 if __name__ == "__main__":
     main()

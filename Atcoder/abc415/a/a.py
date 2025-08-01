@@ -13,14 +13,13 @@ from functools import lru_cache
 
 def main():
     # 入力処理
-    N = int(input())
-    A = list(map(int, input().split()))
     X = int(input())
+    A = list(map(int, input().split()))
     
     # メイン処理
     # XがAに含まれるかチェック
     if X in A:
-        print("Yes")
+        print("yes")
     else:
         print("No")
 
